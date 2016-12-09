@@ -12,9 +12,13 @@ Just install Python 3 for Windows (https://www.python.org/downloads/, v3.5.2 at 
 
 For Linux (Ubuntu):
 Newer versions of Ubuntu (14.04 LTS & above) should come with Python 3 installed. Firstly, make the script executable, by typing the following in a terminal: chmod a+x <path to script>/smt_iv_apocalypse_save_editor.py
+
 *Replace <path to script> with the path to the script itself.
 After that, type in a terminal: ./smt_iv_apocalypse_save_editor.py
+
 If there are no errors and the script successfully launches a GUI, then it is all good, you can ignore the following instructions.
 
+
 However, Ubuntu 16.04 LTS does not have Tkinter package installed, which is responsible for the GUI for the script. So, if you are using Ubuntu 16.04 LTS, you will need to first install the Tkinter package by typing the following in a terminal: sudo apt-get install python3-tk
+
 After installing the package, the script should launch properly.
