@@ -1,5 +1,5 @@
 # SMT_IV_Apocalypse_Save_Editor
-Save editor for Shin Megami Tensei IV - Apocalypse
+Save editor for Shin Megami Tensei IV - Apocalypse (US Version)
 
 This is a save editor for Shin Megami Tensei IV - Apocalypse, made in Python 3. Tested 100% working in Windows. Note that this save editor is only tested working for the save slot 1 in-game (sdds4game1.sav, the save for the cartridge slot 1, not the other slots for the SD card), other slots are not tested. The skill descriptions are also copied from the save editor for SMT IV, so some of the skills may have changed. If anyone has an updated list of the skills and their description, feel free to contact me and I will update the script.
 <br/><br/><br/>
