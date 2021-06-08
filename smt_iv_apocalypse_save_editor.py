@@ -5,6 +5,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 import os
 import sys
+
 print_n = sys.stdout.write
 
 STAT_TXT = ("Str", "Dex", "Mag", "Agi", "Lck")
@@ -53,27 +54,42 @@ SKILL_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd
              '1e', '1f', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a',
              '2b', '2c', '2d', '2e', '2f', '30', '31', '32', '33', '34', '35', '36', '37',
              '38', '39', '3a', '3b', '3c', '3d', '3e', '3f', '40', '41', '42', '43', '44',
-             '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '51', '52', '53', '54',
-             '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f', '65', '66',
-             '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f', '70', '71', '72', '73',
-             '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7f', '89', '8a', '8b',
-             '8c', '8d', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f', 'a0', 'a1',
-             'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ae', 'b0',
-             'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd',
-             'be', 'bf', 'c0', 'c1', 'c2', 'fb', 'fc', 'fd', 'fe', '100', '101', '102', '103',
-             '104', '105', '106', '107', '108', '109', '10a', '10b', '10c', '10d', '10e',
-             '10f', '110', '111', '112', '113', '12d', '12e', '12f', '130', '131', '132',
-             '133', '134', '135', '136', '137', '138', '139', '13a', '13b', '13c', '13d',
-             '13e', '13f', '140', '141', '143', '144', '145', '146', '147', '148', '165',
-             '167', '184', '185', '186', '187', '188', '189', '18a', '18b', '18c', '18d',
-             '18e', '18f', '191', '192', '193', '194', '195', '196', '197', '198', '199',
-             '19a', '19b', '19c', '19d', '19e', '19f', '1a0', '1a1', '1a2', '1a3', '1a4',
-             '1a5', '1a6', '1a7', '1a8', '1a9', '1aa', '1ab', '1ac', '1ad', '1ae', '1af',
-             '1b0', '1b1', '1b2', '1b3', '1b4', '1b5', '1b6', '1b7', '1b8', '1b9', '1ba',
-             '1bb', '1bc', '1bd', '1be', '1bf', '1c0', '1c1', '1c2', '1c3', '1c4', '1c5',
-             '1c6', '1c7', '1cd', '1ce', '1cf', '1d0', '1d1', '1d2', '1d7', '1db', '1dd',
-             '1de', '1df', '1e0', '1e1', '1e2', '1e3', '1e4', '1e5', '1e6', '1e7', '1e8',
-             '1e9', '1ea', '1eb', '1ec', '1ed')
+             '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4a', '4f', '50', '51',
+             '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e',
+             '5f', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b',
+             '6c', '6d', '6e', '6f', '70', '71', '72', '73', '74', '75', '76', '77', '78',
+             '79', '7a', '7b', '7c', '7d', '7e', '7f', '80', '81', '82', '82', '83', '84',
+             '85', '86', '87', '88', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f', '90',
+             '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d',
+             '9e', '9f', 'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa',
+             'ab', 'ac', 'ae', 'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9',
+             'ba', 'bb', 'bc', 'bd', 'be', 'bf', 'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6',
+             'c7', 'c8', 'c8', 'c9', 'ca', 'cb', 'cc', 'cd', 'ce', 'cf', 'd0', 'd1', 'd2',
+             'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df',
+             'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec',
+             'ed', 'ee', 'ef', 'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9',
+             'fa', 'fb', 'fc', 'fd', 'fe', 'ff', '100', '101', '102', '103', '104', '105',
+             '106', '107', '108', '109', '10a', '10b', '10c', '10d', '10e', '10f', '110',
+             '111', '112', '113', '114', '115', '116', '117', '118', '119', '11a', '11b',
+             '11c', '11d', '11e', '11f', '120', '121', '122', '123', '124', '125', '126',
+             '127', '128', '129', '12a', '12b', '12c', '12d', '12e', '12f', '130', '131',
+             '132', '133', '134', '135', '136', '137', '138', '139', '13a', '13b', '13c',
+             '13d', '13e', '13f', '140', '141', '142', '143', '144', '145', '146', '147',
+             '148', '149', '14a', '14b', '14c', '14d', '14e', '14f', '150', '151', '152',
+             '153', '154', '155', '156', '157', '158', '159', '15a', '15b', '15c', '15d',
+             '15e', '15f', '161', '162', '163', '164', '165', '166', '167', '168', '169',
+             '16a', '16b', '16c', '16d', '16e', '16f', '170', '171', '172', '173', '174',
+             '175', '176', '177', '178', '179', '17a', '17b', '17c', '17d', '17e', '17f',
+             '180', '181', '182', '183', '184', '185', '186', '187', '188', '189', '18a',
+             '18b', '18c', '18d', '18e', '18f', '190', '191', '192', '193', '194', '195',
+             '196', '197', '198', '199', '19a', '19b', '19c', '19d', '19e', '19f', '1a0',
+             '1a1', '1a2', '1a3', '1a4', '1a5', '1a6', '1a7', '1a8', '1a9', '1aa', '1ab',
+             '1ac', '1ad', '1ae', '1af', '1b0', '1b1', '1b2', '1b3', '1b4', '1b5', '1b6',
+             '1b7', '1b8', '1b9', '1ba', '1bb', '1bc', '1bd', '1be', '1bf', '1c0', '1c1',
+             '1c2', '1c3', '1c4', '1c5', '1c6', '1c7', '1c8', '1c9', '1ca', '1cb', '1cc',
+             '1cd', '1ce', '1cf', '1d0', '1d1', '1d2', '1d7', '1db', '1dd', '1de', '1df',
+             '1e0', '1e1', '1e2', '1e3', '1e4', '1e5', '1e6', '1e7', '1e8', '1e9', '1ea',
+             '1eb', '1ec', '1ed', '1ee')
 
 ALL_SKILLS = {
     "1": ("Agi", 0, 1, 1, 0, "Weak Fire damage. 1 enemy."),
@@ -384,7 +400,185 @@ ALL_SKILLS = {
     "1ea": ("Pierce Fire", 13, 0, 0, 3, "User's Fire attacks pierce enemy Fire Resist/Null/Drain."),
     "1eb": ("Pierce Ice", 13, 0, 0, 3, "User's Ice attacks pierce enemy Ice Resist/Null/Drain."),
     "1ec": ("Pierce Elec", 13, 0, 0, 3, "User's Elec attacks pierce enemy Elec Resist/Null/Drain."),
-    "1ed": ("Pierce Force", 13, 0, 0, 3, "User's Force attacks pierce enemy Force Resist/Null/Drain.")
+    "1ed": ("Pierce Force", 13, 0, 0, 3, "User's Force attacks pierce enemy Force Resist/Null/Drain."),
+    "4e": ("Makakaja", 9, 11, 0, 5, "Increases magic attack."),
+    "4f": ("Marin Karin", 7, 1, 0, 0, "Inflicts the Charm ailment"),
+    "50": ("Sexy Dance", 7, 16, 0, 2, "Inflicts the Charm ailment"),
+    "60": ("Hell Thrust", 11, 24, 3, 1, "2-4 Heavy Attacks. Smirk: Defense down"),
+    "61": ("Thunder Gods", 2, 36, 4, 0, "Severe Elec attack. Smirk: Pierce"),
+    "62": ("Ice Age", 1, 36, 4, 0, "Severe Ice attack. Smirk: Pierce"),
+    "63": ("Makajam", 7, 1, 0, 0, "Inflicts the Mute ailment"),
+    "64": ("Makajamaon", 7, 11, 0, 2, "Inflicts the Mute ailment"),
+    "74": ("Critical Eye", 9, 6, 0, 3, "Next Phys/Gun attack will be a critical hit"),
+    "7e": ("Judgement Strike", 11, 1, 3, 2, "Heavy Phys attack. Smirk: Pierce"),
+    "80": ("Dia", 7, 1, 0, 4, "Heals HP (Might be Asahi's)"),
+    "81": ("Diarama", 7, 1, 0, 4, "Greayly Heals HP (Might be Asahi's)"),
+    "82": ("Media", 7, 1, 0, 5, "Heals HP (Might be Asahi's)"),
+    "83": ("Mediarama", 7, 1, 0, 5, "Greatly Heals HP (Might be Asahi's)"),
+    "84": ("Smile Charge", 9, 46, 0, 3, "Induces Smirk"),
+    "85": ("Magaon", 9, 6, 0, 0, "Removes Smirk"),
+    "86": ("Heavenly Punishment", 12, 1, 3, 2, "Heavy Almighty attack. Smirk: Pierce"),
+    "87": ("Irrational Glimmer", 4, 1, 0, 2, "Inflicts 66% of target's HP as Almighty"),
+    "88": ("Evil-Crushing Flash", 6, 1, 4, 0, "Severe Light Attack. Smirk: Instant Kill"),
+    "8e": ("Glare", 10, 1, 0, 3, "No effect"),
+    "8f": ("Do Nothing", 10, 1, 0, 3, "No effect"),
+    "90": ("No Reaction", 10, 1, 0, 3, "No effect"),
+    "91": ("Forfeit", 9, 1, 0, 0, "Fully decreases attack and magic. Inflicts Mute"),
+    "92": ("Nightmare", 9, 1, 0, 0, "Fully decreases defense. Inflicts Sleep"),
+    "93": ("Bind", 9, 1, 0, 0, "Fully decreases hit/evade rate. Inflicts Brand"),
+    "94": ("Eternal Rest", 4, 31, 0, 6, "Instant kills sleeping targets"),
+    "95": ("Frenzied Chomp", 11, 2, 1, 0, "Weak Phys attack. Inflicts Poison/Bind/Charm"),
+    "96": ("Eat Whole", 11, 10, 1, 3, "Weak Phys attack. Drains Enemy HP"),
+    "ad": ("Mist Rush", 11, 24, 2, 2, "2-4 medium Phys attacks. Inflicts Daze"),
+    "af": ("Dark Sword", 11, 12, 2, 0, "2 medium Phys attacks. Inflicts Mute"),
+    "c3": ("Sleep Shot", 12, 5, 1, 0, "Weak Gun attack. Inflicts Sleep"),
+    "c4": ("Rapid Bind", 12, 10, 2, 1, "1-3 medium Gun attacks. Inflicts Bind"),
+    "c5": ("Head Crush", 11, 1, 2, 0, "Weak Phys atack. Inflicts Daze"),
+    "c6": ("Power Punch", 11, 4, 2, 0, "Medium Phys attack. Smirk: Daze"),
+    "c7": ("Earthquake", 11, 21, 2, 2, "Medium Phys attack. Inflicts Daze"),
+    "c8": ("Assist Attack", 4, 1, 2, 1, "2 medium Almighty attacks"),
+    "c9": ("Assist Attack", 4, 1, 2, 1, "4 medium Almighty attacks"),
+    "ca": ("Assist Attack", 4, 1, 2, 1, "6 medium Almighty attacks"),
+    "cb": ("Assist Attack", 4, 1, 2, 1, "8 medium Almighty attacks"),
+    "cc": ("Assist Attack", 4, 1, 2, 1, "10 medium Almighty attacks"),
+    "cd": ("Assist Attack", 4, 1, 2, 1, "12 medium Almighty attacks"),
+    "ce": ("Assist Attack", 4, 1, 2, 1, "14 medium Almighty attacks"),
+    "cf": ("Assist Attack", 4, 1, 2, 1, "Dummy"),
+    "d0": ("Will of Flame", 9, 26, 0, 5, "Fire attacks pierce until the end of your turn"),
+    "d1": ("Will of Frost", 9, 26, 0, 5, "Ice attacks pierce until the end of your turn"),
+    "d2": ("Will of Thunder", 9, 26, 0, 5, "Elec attacks pierce until the end of your turn"),
+    "d3": ("Will of Wind", 9, 26, 0, 5, "Force attacks pierce until the end of your turn"),
+    "d4": ("Coercion", 10, 26, 0, 2, "Remove press turn icon on enemy's next turn"),
+    "d5": ("Imposing Stance", 10, 41, 0, 2, "Remove press turn icon on enemy's next turn"),
+    "d6": ("Spear of Michael", 11, 6, 2, 0, "Medium Phys attack"),
+    "d7": ("Gungnir", 11, 18, 4, 0, "Severe Phys attack"),
+    "d8": ("Normal Attack", 11, 1, 1, 0, "Asahi performs a basic attack"),
+    "d9": ("Normal Attack", 11, 1, 1, 0, "Asahi performs a basic attack"),
+    "da": ("Normal Attack", 11, 1, 1, 0, "Asahi performs a basic attack"),
+    "db": ("Normal Attack", 11, 1, 1, 0, "Asahi performs a basic attack"),
+    "dc": ("Normal Attack", 11, 1, 1, 0, "Asahi performs a basic attack"),
+    "dd": ("Mouth of God", 4, 1, 0, 0, "Instant kill attack"),
+    "de": ("Michael's Strike", 11, 18, 2, 2, "Medium Phys attack"),
+    "df": ("Michael's Syphon", 11, 13, 2, 0, "Medium Phys attack. Drains enemy HP"),
+    "e0": ("Michael's Twin Strike", 11, 16, 2, 1, "2 weak Phys attacks."),
+    "e1": ("Michael's Pierce", 11, 24, 2, 0, "Medium Phys attack"),
+    "e2": ("Cheer", 9, 46, 0, 3, "Induces Smirk"),
+    "e3": ("Gungnir Strike", 11, 34, 3, 2, "Heavy Phys attack"),
+    "e4": ("Gungnir Syphon", 11, 20, 3, 0, "Heave Phys attack. Drains enemy HP"),
+    "e5": ("Gungnir Twin Strike", 11, 28, 2, 1, "2 medium Phys attacks"),
+    "e6": ("Gungnir Pierce", 11, 38, 3, 0, "Heavy Phys attacks"),
+    "e7": ("Gungnir Sever", 11, 43, 2, 1, "6 medium Phys attacks. Low hit rate"),
+    "e8": ("Enduring Cheer", 9, 26, 0, 5, "Grants targets Endure until the end of turn"),
+    "e9": ("Warding Shout", 9, 26, 0, 5, "Prevents status ailments until the next turn"),
+    "ea": ("Pierce Armor", 11, 12, 2, 0, "Medium Phys attack"),
+    "eb": ("Assassin's Nata", 11, 15, 0, 0, "Medium Phys attack. Ailments increase power"),
+    "ec": ("Enmlightenment", 9, 4, 0, 3, "Drains weakness until your next turn"),
+    "ed": ("5.67 Billion Hands", 4, 46, 1, 2, "Weak Almighty attack.Smirk: More power"),
+    "ee": ("Venemous Raga", 7, 61, 0, 2, "Inflicts poison, Sick and Bind"),
+    "ef": ("Dream Raga", 7, 61, 0, 2, "Inflicts Sleep, Panic and Charm"),
+    "f0": ("Temporal Blade", 11, 1, 0, 0, "Might make Phys attack at start of battle. Pierce, instant kill"),
+    "f1": ("Sneak attack", 11, 1, 0, 0, "Might make Phys attack at start of battle. Pierce, instant kill"),
+    "f2": ("Infernal Hail", 1, 26, 2, 2, "Medium Ice attack"),
+    "f3": ("Needlestorm", 3, 26, 2, 2, "Medium Force attack"),
+    "f4": ("Photo Flash", 7, 16, 0, 2, "Inflicts the Daze ailment"),
+    "f5": ("Seducing Shot", 7, 26, 0, 2, "Inflicts the Charm ailment"),
+    "f6": ("Mother's Discipline", 12, 36, 2, 2, "3 medium Gun attacks"),
+    "f7": ("Hellish Brand", 0, 16, 3, 0, "Heavy Fire attack"),
+    "f8": ("Grand Tack", 12, 7, 3, 0, "Heavy Gun attack"),
+    "f9": ("Grand Tack", 12, 7, 3, 0, "Heavy Gun attack"),
+    "fa": ("King Bufula", 1, 20, 2, 2, "Madium Ice attack. Smirk: Defense down"),
+    "ff": ("Dazzle Ray", 6, 32, 4, 0, "Severe Light attack. Smirk: Instant kill"),
+    "114": ("Combat Tara", 9, 56, 0, 2, "Increases attack/defense/hit/evade rate"),
+    "115": ("Moxagita", 4, 1, 0, 2, "Attack Power changes based on number of status ailments"),
+    "116": ("Ideals of Maruology", 7, 1, 0, 2, "Inflicts Sleep"),
+    "117": ("Maruology Anthem", 7, 1, 0, 2, "Inflicts Panic"),
+    "118": ("Watch Us, Maruo!", 11, 1, 4, 1, "1-3 Severe Phys attack. Inflicts Panic"),
+    "119": ("Gaze Upon, Maruo!", 11, 1, 3, 2, "Heavy Phys attack. Inflicts Daze"),
+    "11a": ("Maru-Maru Dance", 7, 1, 0, 2, "Inflicts the Charm ailment"),
+    "11b": ("Good Night, Baby", 11, 1, 3, 0, "Heavy Phys attack. Inflicts Sleep"),
+    "11c": ("Being Myself", 7, 1, 0, 2, "Inflicts Bind"),
+    "11d": ("As I Wish", 11, 1, 3, 2, "Heavy Phys attack. High Critical/low hit rate"),
+    "11e": ("Thousand Heads", 11, 1, 4, 0, "Severe Phys attack. High Critical rate"),
+    "11f": ("Serpent's Hunger", 11, 1, 3, 0, "Heavy Phys attack. Inflicts Poison/Bind/Charm"),
+    "120": ("Seismic Yawn", 11, 1, 3, 2, "Heavy Phys attack. High critical rate"),
+    "121": ("Wave of Endless Power", 4, 1, 2, 2, "Medium Almighty"),
+    "122": ("Venomous Flare", 0, 1, 1, 2, "Weak Fire attack. Inflicts Poison"),
+    "123": ("Illogical Rejection", 9, 1, 0, 3, "Nulls Dekaja for one turn"),
+    "124": ("Miracle", 4, 1, 0, 2, "Almighty attack that reduces HP to 1"),
+    "125": ("Vengeful Curse", 4, 1, 0, 0, "Almighty attack. Drains enemy MP"),
+    "126": ("Dark Grudge", 5, 26, 4, 0, "Severe Dark attack. Smirk: Instant kill"),
+    "127": ("Divine Harmony", 9, 1, 0, 2, "Nulls all support effects"),
+    "128": ("Planned Chaos", 4, 1, 2, 0, "Medium 1 enemy attacks. Inflicts Bind/Panic/Charm"),
+    "129": ("Mouth of God", 4, 1, 0, 0, "Instant kill attack"),
+    "12a": ("Makabuild", 9, 1, 0, 3, "Greatly increase magic attack"),
+    "12b": ("Lost Hit", 11, 1, 3, 0, "Heavy Phys attack. Inflicts Lost"),
+    "12c": ("Denial", 10, 1, 0, 0, "Returns a random target to the stock"),
+    "142": ("Snake's Fangs", 12, 18, 3, 1, "2-3 heavy Gun attacks. Inflicts Bind"),
+    "149": ("Move Slowly", 10, 1, 0, 3, "No effect"),
+    "14a": ("Silence", 10, 1, 0, 3, "No effect"),
+    "14b": ("Scorn", 10, 1, 0, 3, "No effect"),
+    "14c": ("Light Nandaka", 6, 1, 3, 1, "4 heavy Light attacks"),
+    "14d": ("Raging Hellfire", 0, 41, 4, 0, "Severe Fire attack. Gain Ice weakness"),
+    "14e": ("Raging Blizzard", 1, 41, 4, 0, "Severe Ice attack. Gain Fire weakness"),
+    "14f": ("Raging Lightning", 2, 41, 4, 0, "Severe Elec attack. Gain Force weakness"),
+    "150": ("Raging Tempest", 3, 41, 4, 0, "Severe Force attack. Gain Elec weakness"),
+    "151": ("Fire of Sinai", 4, 45, 4, 1, "1-5 Severe Almighty attacks."),
+    "152": ("Godslayer's Sword", 4, 31, 0, 0, "Almighty attack. Highly effective against YHVH"),
+    "153": ("Expert Spearplay", 11, 6, 1, 0, "Weak Phys attack"),
+    "154": ("Spearman's Strike", 11, 21, 1, 2, "Weak Phys attack"),
+    "155": ("Spearman's Syphon", 11, 13, 1, 0, "Weak Phys attack. Drains enemy HP"),
+    "156": ("Spearman's Twin Strike", 11, 16, 1, 1, "2 Weak Phys attacks"),
+    "157": ("Spearman's Pierce", 11, 24, 1, 0, "Weak Phys attack"),
+    "158": ("Magic Compression", 9, 10, 0, 3, "Next magic attack deals 2.5x damage"),
+    "159": ("Soul Drain", 4, 2, 0, 0, "Almighty attack. Drains enemy HP/MP"),
+    "15a": ("Blink of Death", 5, 26, 3, 0, "Heavy Dark attack. Smirk: Instant kill"),
+    "15b": ("Fire of Lethargy", 0, 41, 3, 0, "Heavy Fire attack"),
+    "15c": ("Light Devourer", 5, 29, 3, 2, "Heavy Dark attack"),
+    "15d": ("True Agidyne", 0, 28, 4, 0, "Severe Fire attack"),
+    "15e": ("True Bufudyne", 1, 28, 4, 0, "Severe Ice attack"),
+    "15f": ("True Ziodyne", 2, 28, 4, 0, "Severe Elec attack"),
+    "161": ("Magic Torrent", 4, 41, 3, 1, "4-6 Heavy Almighty attacks"),
+    "162": ("Vengeful thunder", 2, 18, 3, 0, "Heavy Elec attack. Inflicts Bind"),
+    "163": ("Crush", 11, 1, 4, 0, "Severe Phys attack"),
+    "164": ("Wave Function", 4, 1, 4, 2, "Severe Almighty attack"),
+    "166": ("Particle Annihilation", 9, 1, 0, 2, "Fully decreases all stats"),
+    "168": ("Rending Claws", 11, 11, 3, 0, "3-4 Heavy Phys attacks"),
+    "169": ("Severe Judgement", 4, 46, 1, 2, "Weak Almighty attack. Smirk More Power"),
+    "16a": ("Megido Ark", 4, 56, 4, 0, "Severe Almighty attack"),
+    "16b": ("Akasha Arts", 11, 26, 4, 0, "Severe Phys attack Smirk: Pierce"),
+    "16c": ("Messiah Blast", 4, 26, 4, 2, "Severe Almighty attack"),
+    "16d": ("Messiah Blask", 4, 26, 4, 2, "Severe Almighty attack"),
+    "16e": ("Agilao Stone", 0, 1, 2, 0, "Medium Fire attack"),
+    "16f": ("Bufula Stone", 1, 1, 2, 0, "Medium Ice attack"),
+    "170": ("Zionga Stone", 2, 1, 2, 0, "Medium Elec attack"),
+    "171": ("Zanma Stone", 3, 1, 2, 0, "Medium Force attack"),
+    "172": ("Hamaon Stone", 6, 1, 2, 0, "Medium Light attack"),
+    "173": ("Mudoon Stone", 5, 1, 2, 0, "Medium Dark attack"),
+    "174": ("Megidola Stone", 4, 1, 2, 2, "Medium Almighty attack"),
+    "175": ("Attack Mirror", 9, 1, 0, 5, "Repel Phys and Gun attacks for one turn"),
+    "176": ("Magic Mirror", 9, 1, 0, 5, "Repel all non-status magic attacks for one turn"),
+    "177": ("Dekaja Stone", 9, 1, 0, 2, "Removes status buffs"),
+    "178": ("Dekunda Stone", 9, 1, 0, 5, "Removes status debuffs"),
+    "179": ("Loyalty Slash", 11, 16, 3, 0, "Heavy Phys attack. Smirk: Instant kill"),
+    "17a": ("Dance of Mara", 7, 16, 0, 2, "Medium Light attack"),
+    "17b": ("Shine More", 4, 1, 3, 1, "2-4 heavy Almighty attacks. Inflicts Daze"),
+    "17c": ("Struggle", 10, 1, 0, 3, "No effect"),
+    "17d": ("Divine Wave", 11, 1, 4, 0, "Severe Phys attack"),
+    "17e": ("Authority", 10, 1, 0, 2, "Remove 3 Press Turn Icons on enemy's next turn"),
+    "17f": ("Authoritative Stance", 10, 1, 0, 3, "Remove 3 Press Turn Icons on enemy's next turn"),
+    "180": ("Holy Stigmata", 11, 1, 4, 0, "Severe Phys attack. Inflicts Brand"),
+    "181": ("Rampage", 11, 1, 3, 1, "6-10 heavy Phys attacks"),
+    "182": ("Black Hole", 4, 1, 4, 2, "Almighty attack. Drains enemy MP"),
+    "183": ("Supernova", 4, 1, 4, 2, "Severe Almighty attack"),
+    "190": ("Death Lust", 4, 59, 1, 2, "Weak Almighty attack. Inflicts Charm"),
+    "1c8": ("Lost Catcher", 13, 0, 0, 3, "Prevents demons from becoming Lost"),
+    "1c9": ("Hiding", 13, 0, 0, 3, "Less likely to be targeted by enemies"),
+    "1ca": ("Temporal Blade", 13, 0, 0, 3, "Might make Phys attack at start of battle"),
+    "1cb": ("Sneak Attack", 13, 0, 0, 3, "Might make Phys attack during enemy turn"),
+    "1cc": ("Self-Righteous Vow", 13, 0, 0, 3, "Raises stats every time own weak point"),
+    "1ee": ("Awakened Power", 13, 0, 0, 3, "Strengthens and adds pierce to all attacks"),
+
+    # "": ("", , , , , ""),
 }
 
 # Demon Information
@@ -418,7 +612,6 @@ ALL_DEMONS = {
     "1b": ("Dummy", "Herald", "(?)"),
     "1c": ("Dummy", "Herald", "(?)"),
     "1d": ("Dummy", "Herald", "(?)"),
-    "1c": ("Dummy", "Herald", "(?)"),
     "1e": ("Dummy", "Herald", "(?)"),
     "1f": ("Lakshmi", "Megami", ""),
     "20": ("Norn", "Megami", ""),
@@ -1376,7 +1569,8 @@ ALL_DEMONS = {
     "3d8": ("Black Rider", "Fiend", "(Boss version)"),
     "3d9": ("Red Rider", "Fiend", "(Boss version)"),
     "3da": ("White Rider", "Fiend", "(Boss version)"),
-    "3db": ("Not Used", "Fiend", "(?) (Entire portrait is solid white) (Null: Dark, Resist: Light) (Probably used to be Chemtrail)"),
+    "3db": ("Not Used", "Fiend",
+            "(?) (Entire portrait is solid white) (Null: Dark, Resist: Light) (Probably used to be Chemtrail)"),
     "3dc": ("Matador", "Fiend", "(Boss version)"),
     "3dd": ("David", "Fiend", "(Boss version)"),
     "3de": ("Not Used", "Tree", "(?)"),
@@ -1448,7 +1642,8 @@ ALL_DEMONS = {
     "420": ("Inanna Remnant", "Archaic", ""),
     "421": ("Shesha 2nd Form", "Archaic", ""),
     "422": ("Krishna", "Herald", "(Actually Gaston with Gungnir)"),
-    "423": ("Merkabah", "Tree", "(Cutscene-related stuff below. Character sprites that appear briefly during battles have to be saved as demons, I guess.)"),
+    "423": ("Merkabah", "Tree",
+            "(Cutscene-related stuff below. Character sprites that appear briefly during battles have to be saved as demons, I guess.)"),
     "424": ("Lucifer", "Tree", ""),
     "425": ("Inanna", "Tree", ""),
     "426": ("Mitra-Buddha", "Tree", "(Portrait shows Inanna, but sprite shows Mitra-Buddha)"),
@@ -1463,7 +1658,8 @@ ALL_DEMONS = {
     "42f": ("Danu", "Tree", ""),
     "430": ("St. Germain Hole", "Tree", ""),
     "431": ("Pillar of Light", "Tree", ""),
-    "432": ("Lucifer", "Tree", "(2nd Form Normal) (Sprite is Asahi as your Goddess. Seems like they replaced stuff from SMTIV without actually changing the names.)"),
+    "432": ("Lucifer", "Tree",
+            "(2nd Form Normal) (Sprite is Asahi as your Goddess. Seems like they replaced stuff from SMTIV without actually changing the names.)"),
     "433": ("Michael", "Tree", "(Giant) (Goddess Navarre)"),
     "434": ("Gabriel", "Tree", "(Giant) (Goddess Nozomi)"),
     "435": ("Raphael", "Tree", "(Giant) (Goddess Gaston)"),
@@ -1539,7 +1735,8 @@ ALL_DEMONS = {
     "47b": ("Queen Mab", "Night", "(Tir Na Nog version)"),
     "47c": ("Cernunnos", "Reaper", "(Tir Na Nog version)"),
     "47d": ("Trial Cyber", "Tree", "(?)"),
-    "47e": ("Trial:Single:Sword", "Tree", "(These are all Mitamas with different attack animations for testing purposes)"),
+    "47e": (
+        "Trial:Single:Sword", "Tree", "(These are all Mitamas with different attack animations for testing purposes)"),
     "47f": ("Trial:Single:Scimitar", "Tree", ""),
     "480": ("Trial:Single:Spear", "Tree", ""),
     "481": ("Trial:Single:Blunt", "Tree", ""),
@@ -1576,6 +1773,7 @@ ALL_DEMONS = {
     "4a0": ("Flynn", "Human", "(Stephen Fight)"),
 }
 
+
 class mytestapp(tk.Tk):
     def __init__(self, parent):
         tk.Tk.__init__(self, parent)
@@ -1594,7 +1792,6 @@ class mytestapp(tk.Tk):
         # self.geometry("+%d+%d" % (x, y))
         # self.initialSetup()
 
-
     def initVars(self):
         self.saveFilePath = None
         self.saveFileDir = None
@@ -1611,7 +1808,6 @@ class mytestapp(tk.Tk):
         self.vcmd = (self.register(self.validate_int), '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
         self.deSkillTB = []
 
-
     def processList(self):
         skillIDNameList = []
         # max_width = 0
@@ -1625,7 +1821,6 @@ class mytestapp(tk.Tk):
                 skillIDNameList.append(val + " - None")
         self.skillIDNameList = skillIDNameList
         # self.skillIDNameWidth = max_width
-
 
     def createWidgets(self):
         # Menu bar
@@ -1702,18 +1897,17 @@ class mytestapp(tk.Tk):
         tab1TopFrame = tk.Frame(tab1Frame)
         tab1TopFrame.grid(column=0, row=0, columnspan=2, sticky="NW")
 
-
         # Top left inner frame for 1st tab
         tab1TopLFrame = tk.Frame(tab1TopFrame)
         tab1TopLFrame.grid(column=0, row=0, sticky="NW")
         tk.Label(
             tab1TopLFrame, text="Skills: ", font=("Helvetica", 15, "bold")
         ).grid(column=0, row=0, sticky="W", pady="0 10")
-        eval_link = lambda p: (lambda _: self.showMCSelSkill(p, self.mcValues["skills"][p-1].get()))
+        eval_link = lambda p: (lambda _: self.showMCSelSkill(p, self.mcValues["skills"][p - 1].get()))
         for x in range(1, 9):
             tk.Label(tab1TopLFrame, text="Slot %d: " % x).grid(column=0, row=x, sticky="W")
             tmp_handle = tk.Entry(
-                tab1TopLFrame, textvariable=self.mcValues["skills"][x-1], state="readonly"
+                tab1TopLFrame, textvariable=self.mcValues["skills"][x - 1], state="readonly"
             )
             tmp_handle.grid(column=1, row=x, sticky="EW", padx="5 0")
             tmp_handle.bind(
@@ -1851,7 +2045,7 @@ class mytestapp(tk.Tk):
         mcSkillScrollbar = tk.Scrollbar(mcSkillListFrame)
         mcSkillScrollbar.grid(column=1, row=0, sticky="NS")
         mcSkillListBox = tk.Listbox(
-            mcSkillListFrame, yscrollcommand=mcSkillScrollbar.set, height=5,# width=self.skillIDNameWidth
+            mcSkillListFrame, yscrollcommand=mcSkillScrollbar.set, height=5,  # width=self.skillIDNameWidth
             exportselection=0
         )
         self.mcSkillListBox = mcSkillListBox
@@ -1941,7 +2135,6 @@ class mytestapp(tk.Tk):
         # de_desc_text.grid(column=1, row=4, sticky="EW", padx="5 0")
         # self.deValues["desc"] = de_desc_text
 
-
         # Top middle inner frame for 2nd tab
         tab2TopMFrame = tk.Frame(tab2TopFrame)
         tab2TopMFrame.grid(column=1, row=0, sticky="NW", padx="70 0", )
@@ -2010,11 +2203,11 @@ class mytestapp(tk.Tk):
         tk.Label(
             tab2TopRFrame, text="Skills: ", font=("Helvetica", 15, "bold")
         ).grid(column=0, row=0, sticky="W", pady="0 10")
-        eval_link = lambda p: (lambda _: self.showDeSelSkill(p, self.deValues["skills"][p-1].get()))
+        eval_link = lambda p: (lambda _: self.showDeSelSkill(p, self.deValues["skills"][p - 1].get()))
         for x in range(1, 9):
             tk.Label(tab2TopRFrame, text="Slot %d: " % x).grid(column=0, row=x, sticky="W")
             tmp_handle = tk.Entry(
-                tab2TopRFrame, textvariable=self.deValues["skills"][x-1], state="readonly"
+                tab2TopRFrame, textvariable=self.deValues["skills"][x - 1], state="readonly"
             )
             tmp_handle.grid(column=1, row=x, sticky="EW", padx="5 0")
             tmp_handle.bind("<Button-1>", eval_link(x))
@@ -2107,7 +2300,7 @@ class mytestapp(tk.Tk):
         deSkillScrollbar = tk.Scrollbar(deSkillListFrame)
         deSkillScrollbar.grid(column=1, row=0, sticky="NS")
         deSkillListBox = tk.Listbox(
-            deSkillListFrame, yscrollcommand=deSkillScrollbar.set, height=5,# width=self.skillIDNameWidth
+            deSkillListFrame, yscrollcommand=deSkillScrollbar.set, height=5,  # width=self.skillIDNameWidth
             exportselection=0
         )
         self.deSkillListBox = deSkillListBox
@@ -2189,7 +2382,6 @@ class mytestapp(tk.Tk):
         self.tab3Frame.grid_remove()
         self.tab2Frame.grid_remove()
 
-
     def deSkillManualEdit(self, button):
         if self.deSkillManual:
             button.config(text="Manual Edit")
@@ -2202,11 +2394,10 @@ class mytestapp(tk.Tk):
                 tb.config(state="normal")
             self.deSkillManual = True
             self.showMessage(1, "Warning", "Do not add zero-padding to the Skill ID!" +
-                                "\nSkill IDs must also be lower case!" +
-                                "\nE.g. Not '01C5', should be '1c5'." +
-                                "\n\nIf you are unsure, end 'Manual Edit'" +
-                                "\nand use 'Change Skill' instead!")
-
+                             "\nSkill IDs must also be lower case!" +
+                             "\nE.g. Not '01C5', should be '1c5'." +
+                             "\n\nIf you are unsure, end 'Manual Edit'" +
+                             "\nand use 'Change Skill' instead!")
 
     def showDeSelSkill(self, slot_no, skill_id):
         if self.save_bytes:
@@ -2230,7 +2421,6 @@ class mytestapp(tk.Tk):
                 self.deSelSkill["dmg"].set("")
                 self.deSelSkill["target"].set("")
             self.deSelSkill["desc"].config(state="disabled")
-
 
     def showDemonValues(self, evt):
         selection = self.demonListBox.curselection()
@@ -2265,7 +2455,6 @@ class mytestapp(tk.Tk):
                     self.deValues["skills"][x].set("")
             # self.deValues["desc"].config(state="disabled")
 
-
     def showMCNewSkill(self, evt):
         selection = self.mcSkillListBox.curselection()
         if selection:
@@ -2286,7 +2475,6 @@ class mytestapp(tk.Tk):
                 self.mcNewSkill["dmg"].set("")
                 self.mcNewSkill["target"].set("")
             self.mcNewSkill["desc"].config(state="disabled")
-
 
     def showDeNewSkill(self, evt):
         selection = self.deSkillListBox.curselection()
@@ -2309,7 +2497,6 @@ class mytestapp(tk.Tk):
                 self.deNewSkill["target"].set("")
             self.deNewSkill["desc"].config(state="disabled")
 
-
     def mcNewSkillVisible(self, button):
         if self.mcNewSkillShown:
             self.tab1MidNewFrame.grid_remove()
@@ -2319,7 +2506,6 @@ class mytestapp(tk.Tk):
             self.tab1MidNewFrame.grid()
             self.mcNewSkillShown = True
             button.config(text="End Skill Change")
-
 
     def deNewSkillVisible(self, button):
         if self.deNewSkillShown:
@@ -2331,7 +2517,6 @@ class mytestapp(tk.Tk):
             self.deNewSkillShown = True
             button.config(text="End Skill Change")
 
-
     def updateMCSkill(self):
         if self.save_bytes:
             slot_index = self.mcSelSkill["slot_no"].get() - 1
@@ -2340,8 +2525,7 @@ class mytestapp(tk.Tk):
                 if selection:
                     skill_id = SKILL_IDS[selection[0]]
                     self.mcValues["skills"][slot_index].set(skill_id)
-                    self.showMCSelSkill(slot_index+1, skill_id)
-
+                    self.showMCSelSkill(slot_index + 1, skill_id)
 
     def updateDeSkill(self):
         if self.save_bytes:
@@ -2351,11 +2535,10 @@ class mytestapp(tk.Tk):
                 if selection:
                     skill_id = SKILL_IDS[selection[0]]
                     self.deValues["skills"][slot_index].set(skill_id)
-                    self.showDeSelSkill(slot_index+1, skill_id)
-
+                    self.showDeSelSkill(slot_index + 1, skill_id)
 
     def validate_int(self, action, index, value_if_allowed,
-                       prior_value, text, validation_type, trigger_type, widget_name):
+                     prior_value, text, validation_type, trigger_type, widget_name):
         if action == "0":
             return True
         try:
@@ -2363,7 +2546,6 @@ class mytestapp(tk.Tk):
             return True
         except ValueError:
             return False
-
 
     def changeTab(self, tab_to_show, tab_button):
         if self.tabShown is tab_to_show:
@@ -2374,7 +2556,6 @@ class mytestapp(tk.Tk):
         tab_button.config(state="disabled", relief="sunken")
         self.tabButton = tab_button
         self.tabShown = tab_to_show
-
 
     def showMCSelSkill(self, slot_no, skill_id):
         if self.save_bytes:
@@ -2398,7 +2579,6 @@ class mytestapp(tk.Tk):
                 self.mcSelSkill["target"].set("")
             self.mcSelSkill["desc"].config(state="disabled")
 
-
     def clearMCSelSkillInfo(self):
         self.mcSelSkill["slot_no"].set(0)
         self.mcSelSkill["id"].set("")
@@ -2410,7 +2590,6 @@ class mytestapp(tk.Tk):
         self.mcSelSkill["desc"].config(state="normal")
         self.mcSelSkill["desc"].delete("0.0", tk.END)
         self.mcSelSkill["desc"].config(state="disabled")
-
 
     def clearDeStats(self):
         self.deValues["race"].set("")
@@ -2427,7 +2606,6 @@ class mytestapp(tk.Tk):
         for x in range(0, DE_SKILL[2]):
             self.deValues["skills"][x].set("")
 
-
     def clearDeSelSkillInfo(self):
         self.deSelSkill["slot_no"].set(0)
         self.deSelSkill["id"].set("")
@@ -2439,7 +2617,6 @@ class mytestapp(tk.Tk):
         self.deSelSkill["desc"].config(state="normal")
         self.deSelSkill["desc"].delete("0.0", tk.END)
         self.deSelSkill["desc"].config(state="disabled")
-
 
     def processSaveFile(self):
         with open(self.saveFilePath, 'rb') as fh:
@@ -2535,8 +2712,10 @@ class mytestapp(tk.Tk):
                         "level": int(self.getHexStr(self.save_bytes, d_lvl_add, DE_LVL[1], add_is_dec=True), 16),
                         "max_hp": int(self.getHexStr(self.save_bytes, d_maxhp_add, DE_MAX_HP[1], add_is_dec=True), 16),
                         "max_mp": int(self.getHexStr(self.save_bytes, d_maxmp_add, DE_MAX_HP[1], add_is_dec=True), 16),
-                        "curr_hp": int(self.getHexStr(self.save_bytes, d_currhp_add, DE_MAX_HP[1], add_is_dec=True), 16),
-                        "curr_mp": int(self.getHexStr(self.save_bytes, d_currmp_add, DE_MAX_HP[1], add_is_dec=True), 16),
+                        "curr_hp": int(self.getHexStr(self.save_bytes, d_currhp_add, DE_MAX_HP[1], add_is_dec=True),
+                                       16),
+                        "curr_mp": int(self.getHexStr(self.save_bytes, d_currmp_add, DE_MAX_HP[1], add_is_dec=True),
+                                       16),
                         "stats": stat1,
                         "skills": skills
                     }
@@ -2546,7 +2725,6 @@ class mytestapp(tk.Tk):
                     self.demonListBox.insert(tk.END, "%4s - %s" % (demon_id, demon_info[0]))
 
                 d_start_add += next_demon_offs
-
 
     def applyMCChanges(self):
         if self.save_bytes:
@@ -2578,7 +2756,6 @@ class mytestapp(tk.Tk):
                 self.writeHexBytes(self.save_bytes, tmp_val, MC_SKILL[0], MC_SKILL[1], counter)
                 counter += 2
 
-
     def applyMiscChanges(self):
         if self.save_bytes:
             # Macca
@@ -2587,7 +2764,6 @@ class mytestapp(tk.Tk):
             # App Points
             tmp_val = format(int(self.miscValues["app_pts"].get()), "x")
             self.writeHexBytes(self.save_bytes, tmp_val, MISC_APP_PTS[0], MISC_APP_PTS[1])
-
 
     def applyDeChanges(self):
         if self.save_bytes:
@@ -2654,13 +2830,9 @@ class mytestapp(tk.Tk):
                     self.writeHexBytes(self.save_bytes, tmp_val_hex, d_skill_add, DE_SKILL[1], add_is_dec=True)
                     d_skill_add += DE_SKILL[1]
 
-
-
-
-
-    def writeHexBytes(self, byte_arr, hex_str, start_add, num_bytes, skip_bytes = None, add_is_dec = False):
+    def writeHexBytes(self, byte_arr, hex_str, start_add, num_bytes, skip_bytes=None, add_is_dec=False):
         hex_str = hex_str.zfill(num_bytes * 2)
-        hex_bytes = [hex_str[i:i+2] for i in range(0, len(hex_str), 2)]
+        hex_bytes = [hex_str[i:i + 2] for i in range(0, len(hex_str), 2)]
         hex_bytes.reverse()
         if add_is_dec:
             curr_add = start_add
@@ -2673,8 +2845,7 @@ class mytestapp(tk.Tk):
             byte_arr[curr_add] = int(val, 16)
             curr_add += 1
 
-
-    def getHexStr(self, byte_arr, start_add, num_bytes, skip_bytes = None, add_is_dec = False):
+    def getHexStr(self, byte_arr, start_add, num_bytes, skip_bytes=None, add_is_dec=False):
         hex_str = ""
         if add_is_dec:
             curr_add = start_add
@@ -2689,8 +2860,7 @@ class mytestapp(tk.Tk):
         hex_str = hex_str.lstrip("0")
         return hex_str if hex_str else "0"
 
-
-    def showMessage(self, type = 0, title = None, message = None):
+    def showMessage(self, type=0, title=None, message=None):
         if not title:
             title = "Test"
         if not message:
@@ -2701,7 +2871,6 @@ class mytestapp(tk.Tk):
             tk.messagebox.showwarning(title, message)
         elif type == 2:
             tk.messagebox.showerror(title, message)
-
 
     # Menu Functions
     def openFileChooser(self):
